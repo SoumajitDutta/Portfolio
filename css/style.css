@@ -60,6 +60,19 @@ h5 {
     width: 300px;
     clip-path: circle();
 }
+.downloadcv{ 
+    padding: 10px 10px;
+    border: rgb(0, 89, 255) 7px solid;
+    border-radius: 35px;
+    letter-spacing: 2px;
+    color: #fff;
+    position: relative;
+    margin: 10% 15%;
+}
+.downloadcv:hover{
+    text-decoration: none;
+    background-color: rgb(130, 181, 192);
+}
 
 /* end all section */
 
