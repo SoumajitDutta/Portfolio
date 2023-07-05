@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>SOUMAJIT DUTTA-Portfolio</title>
+	<title>SOUMAJIT DUTTA - Portfolio</title>
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 
@@ -228,13 +228,14 @@
 					</div>
 
 					<div class="col-lg-6 col-md-6 col-xs-10  wow fadeInUp" data-wow-delay="0.6s">
-						<form action="#" role="form" method="post">
-							<input class="form-control" type="text" name="name" id="name" placeholder="Your Name">
-							<input class="form-control" type="email" name="email" id="email"
+						<form action="#" role="form" method="post" name="google-sheet">
+							<input class="form-control" type="text" name="Name" id="name" placeholder="Your Name">
+							<input class="form-control" type="email" name="Email" id="email"
 								placeholder="Your Email Address">
-							<textarea class="form-control" name="name" id="message" rows="5"
+							<input class="form-control" type="text" name="Mobile" id="mobile" placeholder="Your Phone Number">
+							<textarea class="form-control" name="Message" id="message" rows="5"
 								placeholder="Your Message"></textarea>
-							<input type="submit" class="form-control" id="send" value="SEND ME">
+							<input type="submit" class="form-control" name="submit" id="send" value="SEND ME">
 						</form>
 					</div>
 					<div class="col-md-1 col-sm-1"></div>
@@ -265,7 +266,17 @@
 	</div>
 	<!-- end of website -->
 
-
+    <script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbyaSY8pFEYe73-61cizWn4yeYK_9FuOkRcMHzxYbQeY2UWFSSUX0eKR9phGB2qnslq0/exec'
+		const form = document.forms['google-sheet']
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => alert("Thanks for Contacting me..! I Will Contact You Soon..."))
+			.catch(error => console.error('Error!', error.message))
+		})
+	  </script>
 
 
 	<!-- jQuery -->
